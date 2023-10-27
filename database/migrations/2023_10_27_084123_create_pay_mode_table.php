@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('details', function (Blueprint $table) {
+        Schema::create('pay_mode', function (Blueprint $table) {
             $table->id();
-            
-            $table->double('quantity')->unique;
-            $table->decimal('price')->unique;
+            $table->string('name',50)->unique;
+            $table->string('obesrvation',200);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('pay_mode');
     }
 };
