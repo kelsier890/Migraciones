@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->char('document_number',15)->unique();
+            $table->char('first_name',50)->unique();
+            $table->char('last_name',50)->unique();
+            $table->char('address',80);
+            $table->date('brithday');
+            $table->char('phone_number',15);
+            $table->char('email',100);
             $table->timestamps();
         });
     }
